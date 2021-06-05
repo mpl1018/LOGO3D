@@ -2,11 +2,12 @@ from turtle3d import Turtle3D
 import sys
 
 if __name__ is not None and "." in __name__:
-    from .ExprParser import ExprParser
-    from .ExprVisitor import ExprVisitor
+    from .logo3dParser import logo3dParser
+    from .logo3dVisitor import logo3dVisitor
 else:
-    from ExprParser import ExprParser
-    from ExprVisitor import ExprVisitor
+    from logo3dParser import logo3dParser
+    from logo3dVisitor import logo3dVisitor
+
 
 
 class RoutineData:
@@ -15,7 +16,7 @@ class RoutineData:
         self.root = root
 
 
-class TreeVisitor(ExprVisitor):
+class TreeVisitor(logo3dVisitor):
     def __init__(self):
         self.data = {}
         self.turtle = Turtle3D()
@@ -238,7 +239,6 @@ class TreeVisitor(ExprVisitor):
         return a <= b
     
     def visitPower(self, ctx): 
-        print("gooooooola")
         l = list(ctx.getChildren())
         a = self.visit(l[0])
         b = self.visit(l[2])
