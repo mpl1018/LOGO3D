@@ -5,3 +5,5 @@ logo3dLexer.py
 logo3dLexer.tokens
 logo3dParser.py
 logo3dVisitor.py
+.antlr/
+__pycache_

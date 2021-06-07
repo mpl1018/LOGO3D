@@ -7,7 +7,7 @@
   - Instalación
   - Generación de archivos necesarios
   - Como ejecutar un programa en logo3d
-- Cómo funciona
+- Cómo funciona el intérprete
   - Implementación de la clase turtle 3d
   - Implementación del intérprete de logo3d
   - Excepciones
@@ -83,7 +83,7 @@ O si queremos ejecutar una función en concreto, por ejemplo _foo(par1, par2)_ c
 python logo3d.py programa.l3d foo 10 15
 ```
 
-## Cómo funciona.
+## Cómo funciona el intérprete.
 
 La práctica cuenta con dos partes principales, como se indica en el [enunciado](https://github.com/jordi-petit/lp-logo3d-2021):
 
@@ -299,4 +299,4 @@ END
 
 Ahora que ya conocemos el funcionamiento tanto de la clase Turtle3D como el de la clase TreeVisitor, es mucho más sencillo entender como funciona el intérprete en su conjunto.
 
-La única integración que se ha de hacer en TreeVisitor para incorporar a Turtle3D es comprobar, en cada llamada a subrutina (en la función _visitRoutineCall_) si la función a la que se está haciendo la llamada es alguna de las de la clase Turtle3d (_forward, backward, left, setColor..._). En caso afirmativo se llamará a la instancia de la clase Turtle3D para ejecute dicha función.
+La única integración que se ha de hacer en TreeVisitor para incorporar a Turtle3D es comprobar, en cada llamada a subrutina (en la función _visitRoutineCall_) si la función a la que se está haciendo la llamada es alguna de las de la clase Turtle3d (_forward, backward, left, setColor..._). En caso afirmativo se llamará a la instancia de la clase Turtle3D para ejecute dicha función. En caso negativo significa que la la función llamada no es de la clase Turtle3D y ha de estar definida en el mismo archivo .l3d, si el programa es correcto.
