@@ -294,3 +294,9 @@ PROC main() IS
     // output 157.46400000000003
 END
 ```
+
+### Visión general.
+
+Ahora que ya conocemos el funcionamiento tanto de la clase Turtle3D como el de la clase TreeVisitor, es mucho más sencillo entender como funciona el intérprete en su conjunto.
+
+La única integración que se ha de hacer en TreeVisitor para incorporar a Turtle3D es comprobar, en cada llamada a subrutina (en la función _visitRoutineCall_) si la función a la que se está haciendo la llamada es alguna de las de la clase Turtle3d (_forward, backward, left, setColor..._). En caso afirmativo se llamará a la instancia de la clase Turtle3D para ejecute dicha función.
