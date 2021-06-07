@@ -1,0 +1,11 @@
+PROC main() IS
+    x:="Hola"
+    << x
+    // output "Hola"
+    << x + " mundo!"
+    // output "Hola mundo!"
+    y:= " mundo!"
+    << x + y
+    // output "Hola mundo!"
+
+END

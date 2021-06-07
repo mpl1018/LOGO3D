@@ -16,6 +16,14 @@ PROC espiral(cercles) IS
 END
 
 PROC main() IS
-    x := -5
-    << x + 1
+    x:="Hola"
+    << x
+    // output "Hola"
+    << x + " mundo!"
+    // output "Hola mundo!"
+    y:= " mundo!"
+    << x + y
+    // output "Hola mundo!"
 END
+
+

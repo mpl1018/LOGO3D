@@ -44,6 +44,7 @@ class TreeVisitor(logo3dVisitor):
     def visitRoutineDef(self, ctx):
         l = list(ctx.getChildren())
         routineName = l[1].getText()
+        # Excepción: funcion definida varias veces
         if routineName in self.data: 
             print("Logo3D Error: La función con nombre " + routineName + " está definida varias veces")
             sys.exit()
@@ -60,6 +61,7 @@ class TreeVisitor(logo3dVisitor):
             i += 1
         root = l[i + 2]
         data = RoutineData(parameters, root)
+        # añadimos los parametros de la funcion y su raiz de ejecucion en nuestro diccionario
         self.data[routineName] = data
 
     # Funcion que visita una llamada a una rutina. Puede ser una funcion definida en el mismo archivo o puede ser una funcion de la clase turtle 3d
@@ -214,7 +216,7 @@ class TreeVisitor(logo3dVisitor):
         a = self.visit(l[0])
         b = self.visit(l[2])
         # Aqui me saltaba un error al intentar hacerlo como en las transparencias, con la linea "ExprParser.symbolicNames[n.getSymbol().type]" y he encontrado esta otra manera. ⬇
-        if (str(type(l[0])) == "<class 'logo3dParser.logo3dParser.StrContext'>"):
+        if (str(type(l[0])) == "<class 'logo3dParser.logo3dParser.StrContext'>" or str(type(a)) =="<class 'str'>"):
             return a[:-1] + b[1:]
         return a + b
 
