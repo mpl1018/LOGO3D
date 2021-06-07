@@ -1,4 +1,4 @@
-// Programa de demostracio en Logo3D.
+// Potencias pasadas como parametro
 
 PROC cercle(mida, costats) IS
     FOR i FROM 1 TO costats DO
@@ -16,6 +16,5 @@ PROC espiral(cercles) IS
 END
 
 PROC main() IS
-    x := -5
-    << x + 1
+    espiral(2 # 3 )
 END

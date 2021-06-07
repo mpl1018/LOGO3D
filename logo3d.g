@@ -26,10 +26,13 @@ expr :'(' expr ')' #Braquets
      | expr '!=' expr #NotEq
      | expr '<' expr #Less
      | expr '<=' expr #LessEq
+     | '-' expr      #Neg
      | NUM           # Val
      | VAR           # Var
+     | STRING        # Str
      ;
 NUM : [0-9]+[.]*[0-9]* ;
 VAR : [_a-zA-Z]+[0-9]*;
 WS  : [ \n\r]+ -> skip ;
 COMMENT : '//' ~[\n\r]* -> skip ;
+STRING : '"' ( '\\' [\\"] | ~[\\"\r\n] )* '"';
